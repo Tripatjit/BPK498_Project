@@ -55,14 +55,11 @@ FC = result.array_data[..., 0, 0]
 
 print(FC.shape)
 
-plot_tri_matrix(FC,
-                cmap=plt.cm.RdYlBu_r, 
-                node_labels= sim.connectivity.region_labels,
-                size=[10., 10.],
-                color_anchor=(-1.0, 1.0));
-
+fc_plot = plot_matrix(FC)
+plt.title("Functional Connectivity - HC")
 plt.savefig("sim_FC.png", dpi=300, bbox_inches="tight")
 plt.show()
-
-
-
+sc_plot = plot_matrix(conn.weights)
+plt.title("Structural Connectivity - HC")
+plt.savefig("sim_SC.png", dpi=300, bbox_inches="tight")
+plt.show()
